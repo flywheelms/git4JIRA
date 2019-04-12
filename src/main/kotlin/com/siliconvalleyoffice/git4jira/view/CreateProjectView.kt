@@ -40,7 +40,12 @@ class CreateProjectView(var projectName: String? = EMPTY) : View(), CreateProjec
         Injector.Instance.appComponent.plus(CreateProjectModule(this)).inject(this)
 
         setUpInitialView()
-        if (projectName?.isNotEmpty() == true) setUpInitialViewWithProject()
+        if (projectName?.isNotEmpty() == true) {
+            title = "Edit Project"
+            setUpInitialViewWithProject()
+        } else {
+            title = "Create Project"
+        }
         assignButtonListeners(projectName?.isNotEmpty() == true)
         setPrimaryStageDimensions()
     }
