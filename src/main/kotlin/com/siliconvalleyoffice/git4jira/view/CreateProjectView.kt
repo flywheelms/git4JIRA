@@ -44,6 +44,7 @@ class CreateProjectView(var projectName: String? = EMPTY) : View(), CreateProjec
             title = "Edit Project"
             setUpInitialViewWithProject()
         } else {
+            
             title = "Create Project"
         }
         assignButtonListeners(projectName?.isNotEmpty() == true)
@@ -51,12 +52,12 @@ class CreateProjectView(var projectName: String? = EMPTY) : View(), CreateProjec
     }
 
     private fun setPrimaryStageDimensions() {
-//        root.prefWidth = CREATE_PROJECT_VIEW_WIDTH
-//        root.prefHeight = CREATE_PROJECT_VIEW_HEIGHT
-//        val scale = Scale(sceneScalingFactor, sceneScalingFactor)
-//        scale.pivotX = 0.0
-//        scale.pivotY = 0.0
-//        root.transforms.setAll(scale)
+        root.prefWidth = CREATE_PROJECT_VIEW_WIDTH
+        root.prefHeight = CREATE_PROJECT_VIEW_HEIGHT
+        val scale = Scale(sceneScalingFactor, sceneScalingFactor)
+        scale.pivotX = 0.0
+        scale.pivotY = 0.0
+        root.transforms.setAll(scale)
     }
 
     private fun setUpInitialView() {
